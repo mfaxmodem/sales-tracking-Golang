@@ -8,6 +8,8 @@ import (
 func SetupRoutes(router *gin.Engine) {
 	api := router.Group("/api")
 	{
+		api.GET("/users", controllers.GetUsers)
+
 		api.POST("/location", controllers.AddLocation)
 		api.GET("/locations/:userId", controllers.GetLocations)
 
